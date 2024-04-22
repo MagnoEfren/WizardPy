@@ -105,7 +105,7 @@ conteiner = ft.Container(
 )
 
 def main(page: ft.Page):
-    page.bgcolor = ft.colors.BLACK
+    page.bgcolor = ft.colors.WHITE
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
     page.add(conteiner)
