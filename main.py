@@ -9,9 +9,7 @@ class Portfolio(ft.Container):
 
 
     def build(self):
-
         self.swicth_mode = ft.IconButton(icon=ft.icons.DARK_MODE, bgcolor="green", on_click=self.change_mode)
- 
         self.animation_style = ft.animation.Animation(1000, ft.AnimationCurve.EASE_OUT_CUBIC) 
 
         # Configurando el contenedor
@@ -19,8 +17,90 @@ class Portfolio(ft.Container):
             animate_offset=self.animation_style,
             offset=ft.transform.Offset(0,0),
             expand=True,
-            bgcolor="red"
+          #  bgcolor="red",
+            content= ft.Column(
+                expand=True,
+                controls=[
+                    ft.Row(
+                        expand=True,
+                        controls=[
+                                ft.Container(expand=True,
+                                           # bgcolor="blue",
+                                            margin=20,
+                                            content= ft.Column(
+                                                alignment= ft.MainAxisAlignment.CENTER,
+                                                
+                                                horizontal_alignment= ft.CrossAxisAlignment.CENTER,
+                                                controls=[
+                                                    ft.Text("Hello I'm",size=30, weight=ft.FontWeight.W_900),
+                                                    ft.Text("Magno Efren",size=30, weight=ft.FontWeight.W_900),
+                                                    ft.Text("Estoy interesado en la creación de aplicaciones de escritorio y movil, la  \n codificación aplicaciones IoT y la enseñanza / tutoría.",size=12, text_align=ft.TextAlign.CENTER),
+                                                    ft.Row(expand=True,
+                                                           spacing=0,
+                                                           alignment= ft.MainAxisAlignment.CENTER,
+                                                           controls=[
+                                                               ft.TextButton("Descargar CV", 
+                                                                    style=ft.ButtonStyle(
+                                                                        shape=ft.RoundedRectangleBorder(radius=20),
+                                                                        side=ft.BorderSide(1, ft.colors.GREEN),  # Borde verde delgado
+                                                                        #padding=ft.EdgeInsets.all(10),  # Ajustar el padding
+                                                                ),
+                                                                ),
+                                                                
+                                                               ft.ElevatedButton(content=ft.Image(src="../assets/github.png", fit=ft.ImageFit.COVER, width=30),
+                                                                                style=ft.ButtonStyle(
+                                                                                shape=ft.CircleBorder(),  
+                                                                                
+                                        
+                                                                                ),
+                                                                                height=50
+                                                                                 ),
+
+                                                               ft.ElevatedButton(content=ft.Image(src="../assets/linkedin.png", fit=ft.ImageFit.COVER, width=30),
+                                                                                style=ft.ButtonStyle(
+                                                                                shape=ft.CircleBorder(),  # Forma circular
+                                        
+                                                                                ),
+                                                                                height=50
+                                                                                 ),
+                                                                ft.ElevatedButton(content=ft.Image(src="../assets/youtube.png", fit=ft.ImageFit.COVER, width=30),
+                                                                                style=ft.ButtonStyle(
+                                                                                shape=ft.CircleBorder(),  # Forma circular
+                                        
+                                                                                ),
+                                                                                height=50
+                                                                                 ),
+                                                           ]
+                                                           )
+
+                                                ]
+                                            )
+                                            ),
+
+                                ft.Container(expand=True,
+                                        margin=20,
+                                        content=ft.Image(src="../assets/foto.jpg",
+                                                            fit=ft.ImageFit.CONTAIN,
+                                                            repeat=ft.ImageRepeat.NO_REPEAT,
+                                                            border_radius=ft.border_radius.all(200),
+                                                         ),   
+
+                                             )
+                        ]
+                    ),
+
+                    ft.Container( bgcolor="green", 
+                                 height=100,
+                                # expand=True,
+                                 #content=ft.Text("© Copyright 2024 Magno Efren - Todos los derechos Reservados",size=8, weight=ft.FontWeight.W_100, expand=True),
+                                 #
+                                 )
+                ]
+            )
         )
+
+
+
         self.frame_resumen = ft.Container(
             animate_offset=self.animation_style,
             offset=ft.transform.Offset(-2,0),
@@ -61,6 +141,7 @@ class Portfolio(ft.Container):
                                     expand=True,
                                     controls=[
                                     ft.Container(
+                                    expand=True,
                                     margin=ft.margin.only(left=20),
                                     content= 
                                     ft.Text(
@@ -74,6 +155,8 @@ class Portfolio(ft.Container):
                                         ),
                                         ft.ResponsiveRow(
                                             alignment=ft.MainAxisAlignment.CENTER, 
+                                            spacing=10,
+                                          #  run_spacing={"xs": 10},
                                             expand=True,
                                             controls=[
                                         ft.TextButton("Inicio", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(0)),
@@ -109,9 +192,6 @@ class Portfolio(ft.Container):
                 ]
             )
         )
-
-
-
 
         # Añadiendo el contenedor a la página
         self.page.add(self.content)
