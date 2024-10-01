@@ -51,38 +51,40 @@ class Portfolio(ft.Container):
         self.content = ft.Container(
             expand=True,
             padding=0,
-           
             content= ft.Column(
                 expand=True,
                 spacing=2,
                 controls=[
                     ft.Container(
-                        height=50,
-                       # bgcolor="black",
+                        height=200,
                         content = ft.Row(
                                     expand=True,
-                                    alignment=ft.MainAxisAlignment.END,
                                     controls=[
-                                        ft.Container(
-                                    expand=True,
+                                    ft.Container(
                                     margin=ft.margin.only(left=20),
                                     content= 
-                                        ft.Text(
-                                            size=20,
-                                            spans=[
-                                            ft.TextSpan("Magno", style=ft.TextStyle(color=ft.colors.GREEN_200, weight=ft.FontWeight.W_900)),
-                                            ft.TextSpan("Efren", style=ft.TextStyle(color=ft.colors.GREEN_400, weight=ft.FontWeight.W_900)),
-                                            ft.TextSpan(".", style=ft.TextStyle(color=ft.colors.GREEN_600, weight=ft.FontWeight.W_900)),
-                                                ]
-                                            )
+                                    ft.Text(
+                                        size=20,
+                                        spans=[
+                                        ft.TextSpan("Magno", style=ft.TextStyle(color=ft.colors.GREEN_200, weight=ft.FontWeight.W_900)),
+                                        ft.TextSpan("Efren", style=ft.TextStyle(color=ft.colors.GREEN_400, weight=ft.FontWeight.W_900)),
+                                        ft.TextSpan(".", style=ft.TextStyle(color=ft.colors.GREEN_600, weight=ft.FontWeight.W_900)),
+                                            ]
+                                        )
                                         ),
-                                        ft.TextButton("Inicio", style=ft.ButtonStyle(color=ft.colors.GREEN_400),  on_click= lambda e:self.on_change_page(0)),
-                                        ft.TextButton("Resumen", style=ft.ButtonStyle(color=ft.colors.GREEN_400),  on_click= lambda e:self.on_change_page(1)),
-                                        ft.TextButton("Trabajo", style=ft.ButtonStyle(color=ft.colors.GREEN_400),  on_click= lambda e:self.on_change_page(2)),
-                                        ft.TextButton("Contacto", style=ft.ButtonStyle(color=ft.colors.GREEN_400),  on_click= lambda e:self.on_change_page(3)),
-                                        ft.TextButton("Sobre mi", style=ft.ButtonStyle(color=ft.colors.GREEN_400),  on_click= lambda e:self.on_change_page(4)),
+                                        ft.ResponsiveRow(
+                                            alignment=ft.MainAxisAlignment.CENTER, 
+                                            expand=True,
+                                            controls=[
+                                        ft.TextButton("Inicio", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(0)),
+                                        ft.TextButton("Resumen", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(1)),
+                                        ft.TextButton("Trabajo", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(2)),
+                                        ft.TextButton("Contacto", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(3)),
+                                        ft.TextButton("Sobre mi", style=ft.ButtonStyle(color=ft.colors.GREEN_400),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(4)),
+                                            ]
+                                        ),
                                         ft.Container(
-                                            #expand=True,
+                                            width=50,
                                             margin=ft.margin.only(right=20),
                                             content=self.swicth_mode
                                         )
