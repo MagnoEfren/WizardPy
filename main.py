@@ -5,6 +5,10 @@ class Portfolio(ft.Container):
         super().__init__()
         self.page = page
         self.page.padding = 0
+        self.font_text = "Tahoma" #Montserrat
+        self.page.fonts = {
+        "Starjhol": "assets/Starjhol.ttf"
+    }
 
         self.primary_color = ft.colors.GREEN_500
         self.build()
@@ -50,7 +54,7 @@ class Portfolio(ft.Container):
                                                                          ),
                                                                 ),
                                                                 
-                                                               ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/github.png", fit=ft.ImageFit.COVER, width=20),
+                                                               ft.ElevatedButton(content=ft.Image(src="../assets/github.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -58,7 +62,7 @@ class Portfolio(ft.Container):
                                                                                 height=40
                                                                                  ),
 
-                                                               ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/linkedin.png", fit=ft.ImageFit.COVER, width=20),
+                                                               ft.ElevatedButton(content=ft.Image(src="../assets/linkedin.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  # Forma circular
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -66,7 +70,7 @@ class Portfolio(ft.Container):
                                                                                 ),
                                                                                 height=40
                                                                                  ),
-                                                                ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/youtube.png", fit=ft.ImageFit.COVER, width=20),
+                                                                ft.ElevatedButton(content=ft.Image(src="../assets/youtube.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  # Forma circular
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -84,66 +88,242 @@ class Portfolio(ft.Container):
                                         shape=ft.BoxShape.CIRCLE,
                                         clip_behavior= ft.ClipBehavior.HARD_EDGE,
                                         margin=20,
-                                        content=ft.Image(src="/assets/foto.jpg",
+                                        content=ft.Image(src="../assets/foto.jpg",
                                                          ),   
 
                                              )
                         ]
                     ),
-
-                    ft.Container(
-                                 height=100,
-                                 padding=10,
-                                gradient= ft.LinearGradient(colors= [self.primary_color, ft.colors.TRANSPARENT], begin=ft.Alignment(y=5, x=0)),
-                                # alignment=ft.MainAxisAlignment.CENTER,
-                              #  vertical_alignment= ft.CrossAxisAlignment.CENTER,
-                                content= ft.Row(
-                                        expand=True,
-                                        alignment=ft.MainAxisAlignment.CENTER,
-                                        #vertical_alignment= ft.CrossAxisAlignment.CENTER,
-                                        controls=[
-                                            ft.Text("© Copyright 2024 Nombre Apellido - Todos los derechos Reservados",size=12,expand=True),
-                                        ]
-                                    )
-                                 )
                 ]
             )
         )
 
-
-
-        self.frame_resumen = ft.Container(
+        self.frame_servicio = ft.Container(
             animate_offset=self.animation_style,
             offset=ft.transform.Offset(-2,0),
             expand=True,
-            margin=50,
+            margin=20,
            content= ft.Column(
                expand=True,
                scroll="auto",
                controls=[
                    ft.ResponsiveRow(
-               expand=True,
+               expand=True,  #Algerian
+               spacing=30,
                controls=[
-                   ft.Container(expand=True, bgcolor="blue", col = {"md":12, "lg":6}, height=200,
-                                border_radius=20,),
-                   ft.Container( expand=True, bgcolor="blue", col = {"md":12, "lg":6}, height=200,
-                                border_radius=20),
-                   ft.Container( expand=True, bgcolor="blue", col = {"md":12, "lg":6}, height=200,
-                                border_radius=20),
-                   ft.Container( expand=True, bgcolor="blue", col = {"md":12, "lg":6}, height=200,
-                                border_radius=20),
+                   ft.Container(expand=True, col = {"md":12, "lg":6},  height=200,
+                                padding=10,
+                                border=ft.Border(bottom=ft.BorderSide(2, ft.colors.RED_100)), 
+                                content=ft.Column(
+                                    controls=[
+                                        ft.Row(
+                                            expand=True,
+                                            alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            vertical_alignment= ft.CrossAxisAlignment.CENTER,
+                                            spacing=20,
+                                            controls=[
+                                                ft.Text("01",size=30, weight=ft.FontWeight.W_900,
+                                                font_family="Starjhol"),
+                                                ft.IconButton(icon=ft.icons.ARROW_OUTWARD, style= ft.ButtonStyle(bgcolor=self.primary_color))
+                                            ]
+                                        ),
+                                        ft.Text("Trabajo 01",size=30, weight=ft.FontWeight.W_900,
+                                        ),
+                                        ft.Text("La creatividad impulsa cada paso hacia la \n innovación, permitiendo que las ideas \n se transformen en soluciones reales  \n que impactan el mundo de manera significativa.",size=12, 
+                                                font_family=self.font_text),  
+                                    ]
+                                )
+                                ),                  
+                   ft.Container(expand=True, col = {"md":12, "lg":6},  height=200,
+                                padding=10,
+                                border=ft.Border(bottom=ft.BorderSide(2, ft.colors.RED_100)), 
+                                content=ft.Column(
+                                    controls=[
+                                        ft.Row(
+                                            expand=True,
+                                            alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            vertical_alignment= ft.CrossAxisAlignment.CENTER,
+                                            spacing=20,
+                                            controls=[
+                                                ft.Text("02",size=30, weight=ft.FontWeight.W_900,
+                                                font_family="Starjhol"),
+                                                ft.IconButton(icon=ft.icons.ARROW_OUTWARD, style= ft.ButtonStyle(bgcolor=self.primary_color))
+                                            ]
+                                        ),
+                                        ft.Text("Trabajo 02",size=30, weight=ft.FontWeight.W_900,
+                                        ),
+                                        ft.Text("La creatividad impulsa cada paso hacia la \n innovación, permitiendo que las ideas \n se transformen en soluciones reales  \n que impactan el mundo de manera significativa.",size=12, 
+                                                font_family=self.font_text),  
+                                    ]
+                                )
+                                ),
+
+                   ft.Container(expand=True, col = {"md":12, "lg":6},  height=200,
+                                padding=10,
+                                border=ft.Border(bottom=ft.BorderSide(2, ft.colors.RED_100)), 
+                                content=ft.Column(
+                                    controls=[
+                                        ft.Row(
+                                            expand=True,
+                                            alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            vertical_alignment= ft.CrossAxisAlignment.CENTER,
+                                            spacing=20,
+                                            controls=[
+                                                ft.Text("03",size=30, weight=ft.FontWeight.W_900,
+                                                font_family="Starjhol"),
+                                                ft.IconButton(icon=ft.icons.ARROW_OUTWARD, style= ft.ButtonStyle(bgcolor=self.primary_color))
+                                            ]
+                                        ),
+                                        ft.Text("Trabajo 03",size=30, weight=ft.FontWeight.W_900,
+                                        ),
+                                        ft.Text("La creatividad impulsa cada paso hacia la \n innovación, permitiendo que las ideas \n se transformen en soluciones reales  \n que impactan el mundo de manera significativa.",size=12, 
+                                                font_family=self.font_text),  
+                                    ]
+                                )
+                                ),
+
+                   ft.Container(expand=True, col = {"md":12, "lg":6},  height=200,
+                                padding=10,
+                                border=ft.Border(bottom=ft.BorderSide(2, ft.colors.RED_100)), 
+                                content=ft.Column(
+                                    controls=[
+                                        ft.Row(
+                                            expand=True,
+                                            alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            vertical_alignment= ft.CrossAxisAlignment.CENTER,
+                                            spacing=20,
+                                            controls=[
+                                                ft.Text("04",size=30, weight=ft.FontWeight.W_900,
+                                                font_family="Starjhol"),
+                                                ft.IconButton(icon=ft.icons.ARROW_OUTWARD, style= ft.ButtonStyle(bgcolor=self.primary_color))
+                                            ]
+                                        ),
+                                        ft.Text("Trabajo 04",size=30, weight=ft.FontWeight.W_900,
+                                        ),
+                                        ft.Text("La creatividad impulsa cada paso hacia la \n innovación, permitiendo que las ideas \n se transformen en soluciones reales  \n que impactan el mundo de manera significativa.",size=12, 
+                                                font_family=self.font_text),  
+                                    ]
+                                )
+                                ),
+
                ]
            )
                ]
            )
         )
 
-        self.frame_trabajo = ft.Container(
+        self.title_resume = ft.Text("Mi Experiencia",size=30, weight=ft.FontWeight.W_900, color=self.primary_color)
+
+        self.container_experience = ft.Container(
+            animate_offset=self.animation_style,
+            offset=ft.transform.Offset(0,-5),
+            bgcolor="red",
+            expand=True
+        )
+
+        self.container_education = ft.Container(
+            animate_offset=self.animation_style,
+            offset=ft.transform.Offset(0,-5),
+            bgcolor="red",
+            expand=True
+        )
+
+        self.container_skills = ft.Container(
+            animate_offset=self.animation_style,
+            offset=ft.transform.Offset(0,-5),
+            bgcolor="red",
+            expand=True
+        )
+
+
+        self.frame_resumen = ft.Container(
             animate_offset=self.animation_style,
             offset=ft.transform.Offset(-2,0),  
             expand=True,
-            bgcolor="yellow"
+            content= ft.Column(
+                expand=True,
+                scroll="auto",
+                controls=[
+                    ft.ResponsiveRow(
+                expand=True,
+                controls=[
+                    ft.Container(
+                        expand=True,
+                        margin= 20,
+                        height=400,
+                        col={"xs": 12,"sm":6},
+                        content= ft.Column(
+                            expand=True,
+                            controls=[
+                                ft.Text("¿Por qué contratarme?",size=30, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=12, color=self.primary_color),
+                                ft.TextButton("Experiencia",
+                                              width=200,
+                                              on_click= lambda e: self.on_change_resume(0),
+                                              style=ft.ButtonStyle(
+                                                    elevation = 20,
+                                                    shape=ft.RoundedRectangleBorder(radius=20),
+                                                    side=ft.BorderSide(1, self.primary_color),  
+                                                        ),
+                                            ),
+
+                                ft.TextButton("Educación",
+                                              width=200,
+                                              on_click= lambda e: self.on_change_resume(1),
+                                              style=ft.ButtonStyle(
+                                                    elevation = 20,
+                                                    shape=ft.RoundedRectangleBorder(radius=20),
+                                                    side=ft.BorderSide(1, self.primary_color),  
+                                                        ),
+                                              ),
+
+                                ft.TextButton("Habilidades",
+                                              width=200,
+                                              on_click= lambda e: self.on_change_resume(2),
+                                              style=ft.ButtonStyle(
+                                                    elevation = 20,
+                                                    shape=ft.RoundedRectangleBorder(radius=20),
+                                                    side=ft.BorderSide(1, self.primary_color),  
+                                                        ),
+                                              ),
+
+
+                            ]
+
+
+                        ),
+                        
+                    ),
+
+                    ft.Container(
+                        expand=True,
+                        margin= 20,
+                        height=400,
+                        col={"xs": 12,"sm":6},
+                        content= ft.Column(
+                            expand=True,
+                            controls=[
+                                self.title_resume,
+                                ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=12, color=self.primary_color),
+                                ft.Stack(
+                                    expand=True,
+                                    controls=[
+                                        self.container_experience,
+                                        self.container_education,
+                                        self.container_skills,
+                                    ]
+                                )
+
+                            ]
+                        ),
+                    )
+                ]
+            )
+                ]
+            )
         )
+
+
 
         self.frame_contacto = ft.Container(
             animate_offset=self.animation_style,
@@ -151,13 +331,6 @@ class Portfolio(ft.Container):
             expand=True,
             bgcolor="purple"
         )
-        self.frame_sobre_mi = ft.Container(
-            animate_offset=self.animation_style,
-            offset=ft.transform.Offset(-2,0),            
-            expand=True,
-            bgcolor="pink"
-        )
-
 
         self.content = ft.Container(
             expand=True,
@@ -191,10 +364,9 @@ class Portfolio(ft.Container):
                                             expand=True,
                                             controls=[
                                         ft.TextButton("Inicio", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(0)),
-                                        ft.TextButton("Resumen", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(1)),
-                                        ft.TextButton("Trabajo", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(2)),
+                                        ft.TextButton("Servicio", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(1)),
+                                        ft.TextButton("Resumen", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(2)),
                                         ft.TextButton("Contacto", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(3)),
-                                        ft.TextButton("Sobre mi", style=ft.ButtonStyle(color=self.primary_color),col={"xs": 12,"sm":6, "md":2},  on_click= lambda e:self.on_change_page(4)),
                                             ]
                                         ),
                                         ft.Container(
@@ -212,13 +384,25 @@ class Portfolio(ft.Container):
                         content= ft.Stack(
                             controls=[
                                 self.frame_inicio,
+                                self.frame_servicio,
                                 self.frame_resumen,
-                                self.frame_trabajo,
                                 self.frame_contacto,
-                                self.frame_sobre_mi,
-
                             ]
                         )
+                    ),
+                
+                ft.Container(
+                    height=100,
+                    padding=10,
+                gradient= ft.LinearGradient(colors= [self.primary_color, ft.colors.TRANSPARENT], begin=ft.Alignment(y=5, x=0)),
+                alignment=ft.alignment.center,
+                
+                content= ft.Row(
+                        expand=True,
+                        controls=[
+                            ft.Text("© Copyright 2024 Nombre Apellido - Todos los derechos Reservados",size=12,expand=True),
+                        ]
+                    )
                     )
                 ]
             )
@@ -228,21 +412,37 @@ class Portfolio(ft.Container):
         self.page.add(self.content)
     def on_change_page(self, e):
         self.frame_inicio.offset.x = -2
+        self.frame_servicio.offset.x = -2
         self.frame_resumen.offset.x = -2
-        self.frame_trabajo.offset.x = -2
         self.frame_contacto.offset.x = -2
-        self.frame_sobre_mi.offset.x = -2
+
         if e==0:
             self.frame_inicio.offset.x = 0
         elif e==1:
-            self.frame_resumen.offset.x = 0
+            self.frame_servicio.offset.x = 0
         elif e==2:
-            self.frame_trabajo.offset.x = 0
+            self.frame_resumen.offset.x = 0
         elif e==3:
             self.frame_contacto.offset.x = 0
-        elif e==4:
-            self.frame_sobre_mi.offset.x = 0       
+        
         self.page.update()
+
+    def on_change_resume(self, e):
+        self.container_experience.offset.y = -5
+        self.container_education.offset.y = -5
+        self.container_skills.offset.y = -5
+
+        if e==0:
+            self.container_experience.offset.y = 0
+        elif e==1:
+            self.container_education.offset.y = 0
+        elif e==2:
+            self.container_skills.offset.y = 0
+        
+        self.page.update()
+
+
+
     def change_mode(self, e):
         print()
         if e.control.icon =="dark_mode":
