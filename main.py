@@ -84,7 +84,7 @@ class Portfolio(ft.Container):
                                         shape=ft.BoxShape.CIRCLE,
                                         clip_behavior= ft.ClipBehavior.HARD_EDGE,
                                         margin=20,
-                                        content=ft.Image(src="../WizardPy/assets/foto.jpg",
+                                        content=ft.Image(src="/assets/foto.jpg",
                                                          ),   
 
                                              )
