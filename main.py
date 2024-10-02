@@ -453,5 +453,5 @@ class Portfolio(ft.Container):
             self.page.theme_mode = "dark"
         self.page.update()
 
-# Ejecutando la aplicación pasando directamente la clase Portfolio
-ft.app(target=lambda page: Portfolio(page), view= ft.WEB_BROWSER, assets_dir="assets")
+# Ejecutando la aplicación pasando directamente la clase Portfolio view= ft.WEB_BROWSER,
+ft.app(target=lambda page: Portfolio(page),  assets_dir="assets")
