@@ -216,23 +216,53 @@ class Portfolio(ft.Container):
 
         self.container_experience = ft.Container(
             animate_offset=self.animation_style,
-            offset=ft.transform.Offset(0,-5),
-            bgcolor="red",
-            expand=True
+            visible=True,
+            
+            expand=True,
+            content= ft.Column(
+                spacing=10,
+                expand=True,
+                controls=[
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
+
+                ]
+            ) 
         )
 
         self.container_education = ft.Container(
             animate_offset=self.animation_style,
-            offset=ft.transform.Offset(0,-5),
-            bgcolor="red",
-            expand=True
+            visible=False,
+          #  bgcolor="blue",
+            expand=True,
+            content= ft.Column(
+                spacing=10,
+                expand=True,
+                controls=[
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
+
+                ]
+            )           
         )
 
         self.container_skills = ft.Container(
             animate_offset=self.animation_style,
-            offset=ft.transform.Offset(0,-5),
-            bgcolor="red",
-            expand=True
+            visible=False,
+            expand=True,
+          #  bgcolor="pink",
+            content= ft.Column(
+                spacing=10,
+                expand=True,
+                controls=[
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
+                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
+
+                ]
+            )
         )
 
 
@@ -251,9 +281,13 @@ class Portfolio(ft.Container):
                         expand=True,
                         margin= 20,
                         height=400,
+
+                        alignment= ft.alignment.center,
                         col={"xs": 12,"sm":6},
                         content= ft.Column(
                             expand=True,
+                            horizontal_alignment= ft.CrossAxisAlignment.CENTER,
+                            alignment= ft.MainAxisAlignment.SPACE_EVENLY,
                             controls=[
                                 ft.Text("¿Por qué contratarme?",size=30, weight=ft.FontWeight.W_900, color=self.primary_color),
                                 ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=12, color=self.primary_color),
@@ -301,6 +335,7 @@ class Portfolio(ft.Container):
                         height=400,
                         col={"xs": 12,"sm":6},
                         content= ft.Column(
+                            horizontal_alignment= ft.CrossAxisAlignment.CENTER,
                             expand=True,
                             controls=[
                                 self.title_resume,
@@ -340,7 +375,7 @@ class Portfolio(ft.Container):
                 spacing=2,
                 controls=[
                     ft.Container(
-                        height=200,
+                        padding=20,
                         content = ft.Row(
                                     expand=True,
                                     controls=[
@@ -380,7 +415,6 @@ class Portfolio(ft.Container):
 
                     ft.Container(
                         expand=True,
-                        bgcolor="black",
                         content= ft.Stack(
                             controls=[
                                 self.frame_inicio,
@@ -390,20 +424,18 @@ class Portfolio(ft.Container):
                             ]
                         )
                     ),
-                
-                ft.Container(
-                    height=100,
-                    padding=10,
-                gradient= ft.LinearGradient(colors= [self.primary_color, ft.colors.TRANSPARENT], begin=ft.Alignment(y=5, x=0)),
-                alignment=ft.alignment.center,
-                
-                content= ft.Row(
-                        expand=True,
-                        controls=[
-                            ft.Text("© Copyright 2024 Nombre Apellido - Todos los derechos Reservados",size=12,expand=True),
-                        ]
-                    )
-                    )
+                    
+                    ft.Container(
+                    padding=20,
+                    gradient= ft.LinearGradient(colors= [self.primary_color, ft.colors.TRANSPARENT], begin=ft.Alignment(y=5, x=0)),
+                    alignment=ft.alignment.center,
+                    content= ft.Row(
+                            expand=True,
+                            controls=[
+                                ft.Text("© Copyright 2024 Nombre Apellido - Todos los derechos Reservados",size=12,expand=True),
+                            ]
+                        )
+                        )
                 ]
             )
         )
@@ -424,20 +456,22 @@ class Portfolio(ft.Container):
             self.frame_resumen.offset.x = 0
         elif e==3:
             self.frame_contacto.offset.x = 0
-        
         self.page.update()
 
     def on_change_resume(self, e):
-        self.container_experience.offset.y = -5
-        self.container_education.offset.y = -5
-        self.container_skills.offset.y = -5
+        self.container_experience.visible = False
+        self.container_education.visible = False
+        self.container_skills.visible = False
 
         if e==0:
-            self.container_experience.offset.y = 0
+            self.container_experience.visible = True
+            self.title_resume.value = "Mi Experiencia"
         elif e==1:
-            self.container_education.offset.y = 0
+            self.container_education.visible = True
+            self.title_resume.value = "Mi Educación"
         elif e==2:
-            self.container_skills.offset.y = 0
+            self.container_skills.visible = True
+            self.title_resume.value = "Mis Habilidades"
         
         self.page.update()
 
@@ -454,4 +488,4 @@ class Portfolio(ft.Container):
         self.page.update()
 
 # Ejecutando la aplicación pasando directamente la clase Portfolio view= ft.WEB_BROWSER,
-ft.app(target=lambda page: Portfolio(page),  assets_dir="assets")
+ft.app(target=lambda page: Portfolio(page), assets_dir="assets")
