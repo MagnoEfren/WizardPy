@@ -50,7 +50,7 @@ class Portfolio(ft.Container):
                                                                          ),
                                                                 ),
                                                                 
-                                                               ft.ElevatedButton(content=ft.Image(src="../assets/github.png", fit=ft.ImageFit.COVER, width=20),
+                                                               ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/github.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -58,7 +58,7 @@ class Portfolio(ft.Container):
                                                                                 height=40
                                                                                  ),
 
-                                                               ft.ElevatedButton(content=ft.Image(src="../assets/linkedin.png", fit=ft.ImageFit.COVER, width=20),
+                                                               ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/linkedin.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  # Forma circular
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -66,7 +66,7 @@ class Portfolio(ft.Container):
                                                                                 ),
                                                                                 height=40
                                                                                  ),
-                                                                ft.ElevatedButton(content=ft.Image(src="../assets/youtube.png", fit=ft.ImageFit.COVER, width=20),
+                                                                ft.ElevatedButton(content=ft.Image(src="../WizardPy/assets/youtube.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  # Forma circular
                                                                                 side = ft.BorderSide(1, self.primary_color)
@@ -84,7 +84,7 @@ class Portfolio(ft.Container):
                                         shape=ft.BoxShape.CIRCLE,
                                         clip_behavior= ft.ClipBehavior.HARD_EDGE,
                                         margin=20,
-                                        content=ft.Image(src="../assets/foto.jpg",
+                                        content=ft.Image(src="../WizardPy/assets/foto.jpg",
                                                          ),   
 
                                              )
