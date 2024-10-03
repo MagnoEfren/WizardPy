@@ -32,11 +32,9 @@ class Portfolio(ft.Container):
                         expand=True,
                         controls=[
                                 ft.Container(expand=True,
-                                           # bgcolor="blue",
                                             margin=20,
                                             content= ft.Column(
                                                 alignment= ft.MainAxisAlignment.CENTER,
-                                                
                                                 horizontal_alignment= ft.CrossAxisAlignment.CENTER,
                                                 controls=[
                                                     ft.Text("Hello I'm",size=30, weight=ft.FontWeight.W_900),
@@ -52,12 +50,14 @@ class Portfolio(ft.Container):
                                                                         elevation = 20,
                                                                         shape=ft.RoundedRectangleBorder(radius=20),
                                                                         side=ft.BorderSide(1, self.primary_color),  
+                                                                        overlay_color={"hovered": self.primary_color}
                                                                          ),
                                                                 ),
                                                                 
                                                                ft.ElevatedButton(content=ft.Image(src="../assets/github.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
                                                                                 shape=ft.CircleBorder(),  
+                                                                                overlay_color={"hovered": self.primary_color},
                                                                                 side = ft.BorderSide(1, self.primary_color)
                                                                                 ),
                                                                                 height=40
@@ -65,22 +65,22 @@ class Portfolio(ft.Container):
 
                                                                ft.ElevatedButton(content=ft.Image(src="../assets/linkedin.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
-                                                                                shape=ft.CircleBorder(),  # Forma circular
+                                                                                shape=ft.CircleBorder(),   
+                                                                                overlay_color={"hovered": self.primary_color},
                                                                                 side = ft.BorderSide(1, self.primary_color)
-                                                                                
                                                                                 ),
                                                                                 height=40
                                                                                  ),
                                                                 ft.ElevatedButton(content=ft.Image(src="../assets/youtube.png", fit=ft.ImageFit.COVER, width=20),
                                                                                 style=ft.ButtonStyle(
-                                                                                shape=ft.CircleBorder(),  # Forma circular
+                                                                                shape=ft.CircleBorder(),   
+                                                                                overlay_color={"hovered": self.primary_color},
                                                                                 side = ft.BorderSide(1, self.primary_color)
                                                                                 ),
                                                                                 height=40
                                                                                  ),
                                                            ]
                                                            )
-
                                                 ]
                                             )
                                             ),
@@ -135,6 +135,7 @@ class Portfolio(ft.Container):
                                     ]
                                 )
                                 ),                  
+                  
                    ft.Container(expand=True, col = {"md":12, "lg":6},  height=200,
                                 padding=10,
                                 border=ft.Border(bottom=ft.BorderSide(2, ft.colors.RED_100)), 
@@ -493,11 +494,94 @@ class Portfolio(ft.Container):
             )
         )
 
+
         self.frame_contacto = ft.Container(
             animate_offset=self.animation_style,
             offset=ft.transform.Offset(-2,0),            
             expand=True,
-            bgcolor="purple"
+            content= ft.Column(
+            expand=True,
+            scroll="auto",
+            controls=[
+                ft.ResponsiveRow(
+                expand=True,
+                controls=[
+                    ft.Container(
+                        expand=True,
+                        margin= 20,
+                        height=400,
+                        padding=10,
+                        alignment= ft.alignment.center,
+                        col={"xs": 12,"sm":6},
+                        content= ft.Column(
+                            expand=True,
+                            horizontal_alignment= ft.CrossAxisAlignment.CENTER,
+                            alignment= ft.MainAxisAlignment.SPACE_EVENLY,
+                            controls=[
+                                ft.Text("Trabajemos juntos...!",size=20, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                ft.TextField(hint_text="Correo electronico", border_radius=30, border_color= self.primary_color),
+                                ft.TextField(hint_text="Asunto", border_radius=30, border_color= self.primary_color),
+                                ft.TextField(hint_text="Mensaje", border_radius=30, border_color= self.primary_color,
+                                            multiline=True,
+                                            min_lines=5, 
+                                            max_lines=6 
+                                             ),
+                                ft.ElevatedButton(text ="Enviar",
+                                        style=ft.ButtonStyle(overlay_color={"hovered": self.primary_color})) 
+                            ]
+                        ),
+                    ),
+
+                    ft.Container(
+                        expand=True,
+                        margin= 20,
+                        height=400,
+                        col={"xs": 12,"sm":6},
+                        content= ft.Column(
+                            horizontal_alignment= ft.CrossAxisAlignment.CENTER,
+                            alignment= ft.MainAxisAlignment.CENTER,
+                            expand=True,
+                            controls=[
+                                 ft.Row(controls=[
+                                            ft.IconButton(icon=ft.icons.PHONE,
+                                                           bgcolor=ft.colors.with_opacity(0.2, self.primary_color)),
+                                            ft.Column(spacing=0,
+                                                controls=[
+                                                          ft.Text("Telefono",size=12, color=self.primary_color),
+                                                          ft.Text("+51 123 543 856",size=18, weight= ft.FontWeight.W_500, color=self.primary_color),
+                                                      ])
+                                        ]),
+
+                                 ft.Row(controls=[
+                                            ft.IconButton( #ElevatedButton
+                                                icon=ft.icons.MESSAGE,
+                                                bgcolor=ft.colors.with_opacity(0.2, self.primary_color)                                           
+                                            ),
+
+                                            ft.Column(spacing=0,
+                                                controls=[
+                                                          ft.Text("Correo electronico",size=12, color=self.primary_color),
+                                                          ft.Text("nombre@gmail.com",size=18, weight= ft.FontWeight.W_500, color=self.primary_color),
+                                                      ])
+                                        ]),
+
+                                 ft.Row(controls=[
+                                            ft.IconButton(icon=ft.icons.LOCATION_ON,
+                                                           bgcolor=ft.colors.with_opacity(0.2, self.primary_color)  ),
+                                            ft.Column(spacing=0,
+                                                controls=[
+                                                          ft.Text("Dirección",size=12, color=self.primary_color),
+                                                          ft.Text("Urb.Manuel G. Jr. XX",size=18, weight= ft.FontWeight.W_500, color=self.primary_color),
+                                                      ])
+                                        ]),
+
+                            ]
+                        ),
+                    )
+                ]
+            )
+                ]
+            )
         )
 
         self.content = ft.Container(
