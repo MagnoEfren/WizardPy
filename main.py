@@ -5,6 +5,7 @@ class Portfolio(ft.Container):
         super().__init__()
         self.page = page
         self.page.padding = 0
+        self.page.title = "Mi Portafolio"
         self.font_text = "Tahoma" #Montserrat
         self.page.fonts = {
         "Starjhol": "assets/Starjhol.ttf"
@@ -217,50 +218,184 @@ class Portfolio(ft.Container):
         self.container_experience = ft.Container(
             animate_offset=self.animation_style,
             visible=True,
-            
             expand=True,
-            content= ft.Column(
+            content=  ft.Column(
+                alignment= ft.MainAxisAlignment.CENTER,
                 spacing=10,
                 expand=True,
                 controls=[
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="green"),
+                    ft.Container(expand=True,
+                                content= ft.Row(
+                                expand=True,
+                                controls=[
+                                    ft.Container(
+                                        expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                        content= ft.Column(expand=True,
+                                                            controls=[
+                                                            ft.Text("2020 - Presente",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                            ft.Text("Profesor",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                            ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                            ])
 
-                ]
-            ) 
+                                    ),
+
+                                    ft.Container(
+                                        expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                        content= ft.Column(expand=True,
+                                                            controls=[
+                                                            ft.Text("2019 - 2020",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                            ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                            ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                            ])
+                                    ),
+                                ]
+                                )
+                            ),
+
+                    ft.Container(expand=True,
+                                content= ft.Row(
+                                expand=True,
+                                controls=[
+                                ft.Container(
+                                    expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                    content= ft.Column(expand=True,
+                                                        controls=[
+                                                        ft.Text("2017 - 2019",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                        ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                        ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                        ])
+                                            ),
+                                ft.Container(
+                                    expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                    content= ft.Column(expand=True,
+                                                            controls=[
+                                                            ft.Text("2015 - 2017",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                            ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                            ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                            ])
+                                    )
+                                ]
+                            )                                 
+                        ),
+                    ]
+            )
         )
 
         self.container_education = ft.Container(
             animate_offset=self.animation_style,
             visible=False,
-          #  bgcolor="blue",
             expand=True,
             content= ft.Column(
-                spacing=10,
-                expand=True,
-                controls=[
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="blue"),
+            alignment= ft.MainAxisAlignment.CENTER,
+            spacing=10,
+            expand=True,
+            controls=[
+                    ft.Container(expand=True,
+                                    content= ft.Row(
+                                        expand=True,
+                                        controls=[
+                                            ft.Container(
+                                                expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                                content= ft.Column(expand=True,
+                                                                   controls=[
+                                                                    ft.Text("2020 - Presente",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                                    ft.Text("Profesor",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                                    ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                                   ])
 
-                ]
-            )           
+                                            ),
+
+                                            ft.Container(
+                                                expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                                content= ft.Column(expand=True,
+                                                                   controls=[
+                                                                    ft.Text("2019 - 2020",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                                    ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                                    ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                                   ])
+                                            ),
+                                        ]
+                                    )
+                                    ),
+                    ft.Container(expand=True,
+                                content= ft.Row(
+                                    expand=True,
+                                    controls=[
+                                        ft.Container(
+                                            expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                            content= ft.Column(expand=True,
+                                                                   controls=[
+                                                                    ft.Text("2017 - 2019",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                                    ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                                    ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                                   ])
+                                        ),
+
+                                        ft.Container(
+                                            expand=True, border_radius=10,bgcolor=ft.colors.with_opacity(0.2, ft.colors.GREEN), padding=20,
+                                            content= ft.Column(expand=True,
+                                                                   controls=[
+                                                                    ft.Text("2015 - 2017",size=18, weight=ft.FontWeight.W_900, color=self.primary_color),
+                                                                    ft.Text("Desarrollador",size=12,weight=ft.FontWeight.W_500, color=self.primary_color),
+                                                                    ft.Text("La creatividad impulsa cada paso hacia la innovación.",size=10, color=self.primary_color),
+                                                                   ])
+                                            )
+                                        ]
+                                    )                                 
+                                ),
+                    ]
+            )
         )
 
         self.container_skills = ft.Container(
             animate_offset=self.animation_style,
             visible=False,
             expand=True,
-          #  bgcolor="pink",
             content= ft.Column(
+                alignment= ft.MainAxisAlignment.CENTER,
                 spacing=10,
                 expand=True,
                 controls=[
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
-                    ft.Container(expand=True, col=6, border_radius=10, bgcolor="red"),
+                    ft.Container(expand=True,
+                                 content= ft.Row(
+                                     expand=True,
+                                     controls=[
+                                         ft.Container(
+                                             content=ft.Image(src="assets/python.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
+                                         ft.Container(
+                                             ft.Image(src="assets/matlab.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
+                                         ft.Container(
+                                             ft.Image(src="assets/js.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
 
+                                     ]
+                                 )
+                                 ),
+                    ft.Container(expand=True,
+                                 content= ft.Row(
+                                     expand=True,
+                                     controls=[
+                                         ft.Container(
+                                             content=ft.Image(src="assets/html5.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
+                                         ft.Container(
+                                             ft.Image(src="assets/react.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
+                                         ft.Container(
+                                             ft.Image(src="assets/solidworks.svg"),padding=20,
+                                             expand=True, border_radius=10,bgcolor=self.primary_color
+                                         ),
+
+                                     ]
+                                 )                                 
+                                 ),
                 ]
             )
         )
@@ -357,8 +492,6 @@ class Portfolio(ft.Container):
                 ]
             )
         )
-
-
 
         self.frame_contacto = ft.Container(
             animate_offset=self.animation_style,
@@ -475,8 +608,6 @@ class Portfolio(ft.Container):
         
         self.page.update()
 
-
-
     def change_mode(self, e):
         print()
         if e.control.icon =="dark_mode":
@@ -487,5 +618,5 @@ class Portfolio(ft.Container):
             self.page.theme_mode = "dark"
         self.page.update()
 
-# Ejecutando la aplicación pasando directamente la clase Portfolio view= ft.WEB_BROWSER,
-ft.app(target=lambda page: Portfolio(page), assets_dir="assets")
+# Ejecutando la aplicación pasando directamente la clase Portfolio
+ft.app(target=lambda page: Portfolio(page), assets_dir="assets") #view= ft.WEB_BROWSER,
