@@ -198,7 +198,7 @@ def main(page: ft.Page):
             [
                 ft.Container(
                     content=ft.Image(
-                        src="https://github.com/MagnoEfren/flet/blob/main/App%20Flet%20to%20APK/fletcal/assets/flet-to-apk.png?raw=true",
+                        src="https://raw.githubusercontent.com/MagnoEfren/flet/refs/heads/main/App%20Flet%20to%20APK/fletcal/assets/flet-to-apk.png",
                         fit=ft.ImageFit.COVER,
                         border_radius=12,
                     ),
@@ -381,3 +381,4 @@ def main(page: ft.Page):
     page.add(main_content)
 
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+
