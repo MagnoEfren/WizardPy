@@ -108,7 +108,7 @@ def main(page: ft.Page):
             [
                 ft.Container(
                     content=ft.Image(
-                        src="https://github.com/MagnoEfren/apps_in_flet/blob/main/Form_CRUD/ss.webp?raw=true",
+                        src="https://raw.githubusercontent.com/MagnoEfren/flet/refs/heads/main/Form_CRUD/ss.webp",
                         fit=ft.ImageFit.COVER,
                         border_radius=12,
                     ),
@@ -153,7 +153,7 @@ def main(page: ft.Page):
             [
                 ft.Container(
                     content=ft.Image(
-                        src="https://github.com/MagnoEfren/flet/blob/main/PortfolioWeb/222.png?raw=true",
+                        src="https://raw.githubusercontent.com/MagnoEfren/flet/refs/heads/main/PortfolioWeb/222.png",
                         fit=ft.ImageFit.COVER,
                         border_radius=12,
                     ),
@@ -381,4 +381,5 @@ def main(page: ft.Page):
     page.add(main_content)
 
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+
 
